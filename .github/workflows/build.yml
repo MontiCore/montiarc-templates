@@ -1,0 +1,33 @@
+# (c) https://github.com/MontiCore/monticore
+name: Build
+
+concurrency: # run this test workflow only once per branch
+  group: ${{ github.repository }}-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+on:
+  push: # run this test pipeline on every push
+  pull_request: # and pull request
+  repository_dispatch: # and on request of upstream projects
+    types: [ trigger_after_upstream_deploy ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        project: [empty, ElevatorTutorial]
+    steps:
+      - name: Checkout project sources
+        uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '11'
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v3
+        with:
+          gradle-version: "7.6.4"
+      - name: Build
+        run: gradle build
+        working-directory: ${{ matrix.project }}
