@@ -1,9 +1,9 @@
 
 ### Checking, Building, And Simulating
 
-For running and building the project you need Java 11.
+For running and building the project you need Java 21.
 
-Either install exactly Gradle 7.6 or add a Gradle wrapper with that version by running:
+Either install exactly Gradle 8.5 or add a Gradle wrapper with that version by running:
 
 ```bash
 ./init-gradlew[.bat]

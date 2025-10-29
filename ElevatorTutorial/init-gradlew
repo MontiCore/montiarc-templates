@@ -2,19 +2,19 @@
 #
 # (c) https://github.com/MontiCore/monticore
 #
-# This tool downloads the Gradle 7.6.4 wrapper
+# This tool downloads the Gradle 8.5 wrapper
 #
 
 
 BASEDIR=$(dirname $0)
 mkdir -p $BASEDIR/gradle/wrapper
-wget -O $BASEDIR/gradle/wrapper/gradle-wrapper.jar https://raw.githubusercontent.com/gradle/gradle/refs/tags/v7.6.4/gradle/wrapper/gradle-wrapper.jar
-wget -O $BASEDIR/gradlew https://raw.githubusercontent.com/gradle/gradle/refs/tags/v7.6.4/gradlew
-wget -O $BASEDIR/gradlew.bat https://raw.githubusercontent.com/gradle/gradle/refs/tags/v7.6.4/gradlew.bat
+wget -O $BASEDIR/gradle/wrapper/gradle-wrapper.jar https://raw.githubusercontent.com/gradle/gradle/refs/tags/v8.5.0/gradle/wrapper/gradle-wrapper.jar
+wget -O $BASEDIR/gradlew https://raw.githubusercontent.com/gradle/gradle/refs/tags/v8.5.0/gradlew
+wget -O $BASEDIR/gradlew.bat https://raw.githubusercontent.com/gradle/gradle/refs/tags/v8.5.0/gradlew.bat
 
 echo """distributionBase=GRADLE_USER_HOME
 distributionPath=wrapper/dists
-distributionUrl=https\://services.gradle.org/distributions/gradle-7.6.4-bin.zip
+distributionUrl=https\://services.gradle.org/distributions/gradle-8.5-bin.zip
 networkTimeout=10000
 zipStoreBase=GRADLE_USER_HOME
 zipStorePath=wrapper/dists

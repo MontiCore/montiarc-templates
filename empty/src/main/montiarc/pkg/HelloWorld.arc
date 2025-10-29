@@ -9,6 +9,6 @@ component HelloWorld {
     S -> S / {
       Console.printLn("Hello World!");
       Simulation.stop();
-    };
+    }
   }
 }
